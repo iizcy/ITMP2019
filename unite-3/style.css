@@ -3,9 +3,9 @@ body{
 	font-size: 150%;
 	margin:40px;
 	text-align: center;
-	background-image: url(bg.png);
+	background-image: url(cookie.png);
 	background-position: 0% 0%;
-	background-size: 20%;
+	background-size: 45%;
 	/*background-size: cover;*/
 	min-height: 100vh; /*ทำให้เวลาทำพื้นหลังแล้วมันสูงเต็มหน้าจอ*/
 	animation: bg 40s infinite linear;
