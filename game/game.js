@@ -18,10 +18,11 @@ bgImage.onload = function () {
   // show the background image
   bgReady = true;
 };
-bgImage.src = "images/background.png";
+bgImage.src = "images/background1.png";
 
 // Load the hero image
 var heroReady = false;
+
 var heroImage = new Image();
 heroImage.onload = function () {
   // show the here image
@@ -31,6 +32,9 @@ heroImage.src = "images/hero.png";
 
 // Load the monster image
 var monsterReady = false;
+var width = 100px;
+var height = 100px;
+
 var monsterImage = new Image();
 monsterImage.onload = function () {
   // show the monster image

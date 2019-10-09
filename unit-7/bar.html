@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>My Chart!!</title>
+	<link rel="stylesheet" type="text/css" href="https://jabont.com/jayss/jayss.css">
+	<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed&display=swap" rel="stylesheet">
+	<style type="text/css">
+	body,.ffont, .title.ffont, h1, h2, h3, h4 {
+		font-family: 'Roboto Condensed', sans-serif !important;
+	}
+	.bar .label{
+		width: 100px;
+		display: inline-block;
+	}
+	.bar .chart{
+		width: 10px;
+		height: 1em;
+		display: inline-block;
+		transition: all 3s;
+	}
+	.bar .color1{
+		background-color: #e52643;
+	}
+	.bar .color2{
+		background-color: #c33046;
+	}
+	.bar .color3{
+		background-color: #ff9d23;
+	}
+	.bar .color4{
+		background-color: #ffb456;
+	}
+	.bar .color5{
+		background-color: #b86b1d;
+	}
+	.bar .chart.close{
+		width: 10px !important;
+	}
+	#topLine{
+		height: 9px;
+		background: ##0078ca;
+		width: 20%;
+		position: fixed;
+		top: 0;
+		left: 0;
+		transition: all 0.5s
+	}
+	#paragraph{
+		transform: scale(1);
+		transition: all 1.5s;
+	}
+	#paragraph.small{
+		transform: scale(0.2);
+	}
+	.parent{
+		height: 100vh;
+	}
+</style>
+</head>
+<body>
+	<div class="parent bg-smoke padding-l v-middle-flex">
+		<div class="to-center">
+			<h1>Welcome</h1>
+			<p>Please scroll down</p>
+		</div>
+	</div>
+	<div class="parent bg-white padding-l v-middle-flex">
+		<div class="to-center">
+			<h1>My Learning</h1>
+			<sp class="xl"></sp>
+			<div class="t-left">
+				<div class="bar">
+					<div class="label">Thai</div>
+					<div class="chart close color1" style="width: 1000px""></div>
+				</div>
+				<div class="bar">
+					<div class="label">English</div>
+					<div class="chart close color2" style="width: 809px"></div>
+				</div>
+				<div class="bar">
+					<div class="label">Sciene</div>
+					<div class="chart close color3" style="width: 600px"></div>
+				</div>
+				<div class="bar">
+					<div class="label">Math</div>
+					<div class="chart close color4" style="width: 860px"></div>
+				</div>
+				<div class="bar">
+					<div class="label">Music</div>
+					<div class="chart close color5" style="width: 540px"></div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+	<div class="parent bg-smoke padding-l v-middle-flex">
+		<div class="to-center">
+			<h1>I'm Genius, right?</h1>
+			<sp class="xl"></sp>
+			<p id="paragraph" class="small">
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+			</p>
+		</div>
+	</div>
+	<div id="topLine">
+		
+	</div>
+
+	<script type="text/javascript">
+		let bodyR = document.body.getBoundingClientRect();
+		let bodyH = window.innerHeight;
+		let y = window.pageYOffset;
+		let yBottom = window.pageYOffset+window.innerHeight;
+		function onScroll(){
+			bodyR = document.body.getBoundingClientRect();
+			y = window.pageYOffset;
+			yBottom = window.pageYOffset+window.innerHeight;
+			console.log(bodyR);
+		}
+		window.addEventListener("scroll", onScroll);
+
+				function lenghtLine(){ 
+			if (window.pageYOffset >= 0) { //page1
+				topLine.style.width = '20%';
+				topLine.style.background = '#0078ca';
+			}
+			if (window.pageYOffset >= 300 ) { //page1.5
+				topLine.style.width = '40%';
+				topLine.style.background = '#00adee';
+			}
+			if (window.pageYOffset >= 700) { //page2
+				topLine.style.width = '60%';
+				topLine.style.background = '#fabc09';
+			}
+			if (window.pageYOffset >= 1000 ) { //page2.5
+				topLine.style.width = '80%';
+				topLine.style.background = '#f1511b';
+			}
+			if (window.pageYOffset >= 1400) { //page3
+				topLine.style.width = '100%';
+				topLine.style.background = '#7fcb28';
+			}
+		}
+		window.addEventListener("scroll", lenghtLine); //New
+
+		var x = document.getElementsByClassName("chart"); //New
+		function lineChart(){ //New
+			if (window.pageYOffset < 700 || window.pageYOffset >= 1400) {
+				for (var i = 0; i <= x.length; i++) {
+					x[i].classList.add("close");
+				}
+			}	
+			if (window.pageYOffset >= 700 && window.pageYOffset < 1400) {
+				for (var i = 0; i <= x.length; i++) {
+					x[i].classList.remove("close");
+				}
+			}			
+		}
+		window.addEventListener("scroll", lineChart);
+
+		function ppp(){
+			let ppR = paragraph.getBoundingClientRect();
+			console.log(ppR);
+			console.log(ppR.top-bodyH > -100 );
+			console.log(ppR.top-bodyH < 0)
+			// ppR.top คือระยะห่างของพารากราฟขณะนั้นกับขอบบนเบราเซอร์ 
+			// หาก top = 0 คืออีลีเมนท์อยู่ชิดขอบบน
+			// หาก top = ความสูงหน้าจอหรือ window.innerHeight แปลว่าอีลีเมนท์นั้นกำลังโผล่มา
+			if (ppR.top < window.innerHeight && ppR.bottom > 0) {
+				paragraph.classList.remove('small')
+			}
+			else {
+				paragraph.classList.add('small')
+			}
+		}
+		window.addEventListener("scroll", ppp);
+	</script>
+</body>
+</html>
