@@ -1,117 +1,201 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-	<style>
-	.yoyo{
-		width: 100px;
-		height: 100px;
-		position: fixed;
-		right: 1em;
-		bottom: 1em;
-		background: blue;
-	}
-	@keyframes blink{
-		from{opacity: 1}
-		to{opacity: 0.3}
-	}
-	.blink{
-		animation: blink .2s infinite;
-	}
-	#tooPla{
-		height: 600px;
-		background: navy;
-		position: relative;
-		overflow: hidden;
-	}
-	.fish{
-		position: absolute;
-		width: 100px;
-		transition: all .2s
-	}
-	.f1{
-		top: 450px;
-		left: 80px;
-	}
-	.f2{
-		top: 700px;
-		left: 480px;
-	}
-	.f3{
-		top: 540px;
-		left: 60px;
-	}
-	.f4{
-		top: 580px;
-		left: 200px;
-	}
-	.f5{
-		top: 400px;
-		left: 400px;
-	}
-</style>
-	<title>Hello Ocean World</title>
-	<meta charset="utf-8">
-	<link rel="stylesheet" type="text/css" href="https://jabont.com/jayss/jayss.css">
+    <style>
+        @keyframes blink {
+            from {
+                opacity: 1
+            }
+            to {
+                opacity: 0.3
+            }
+        }
+        
+        .blink {
+            animation: blink .2s infinite;
+        }
+        
+        #tooPla {
+            height: 2000px;
+            width: 100%;
+            overflow: hidden;
+            background-color: #1fc8db;
+            background-image: linear-gradient( #9fb8ad 0%, #1fc8db 51%, #2cb5e8 75%);
+        }
+        
+        .fish {
+            position: absolute;
+            width: 100px;
+            transition: all .2s;
+        }
+        
+        .f1 {
+            width: 30%;
+            top: 250px;
+            left: 700px;
+        }
+        
+        .f2 {
+            width: 100px;
+            z-index: 2;
+            top: 680px;
+            left: 150px;
+            position: fixed;
+        }
+        
+        .f3 {
+            top: 1240px;
+            left: 590px;
+        }
+        
+        .f4 {
+            top: 1000px;
+            left: 100px;
+        }
+        
+        .f5 {
+            width: 30%;
+            top: 1700px;
+            left: 200px;
+        }
+        
+        .f6 {
+            top: 800px;
+            left: 550px;
+            width: 30%;
+        }
+        
+        .f7 {
+            position: fixed;
+            width: 15%;
+            bottom: 0;
+            top: 650px;
+            left: 840px;
+            z-index: 2;
+        }
+        
+        .f8 {
+            top: 400px;
+            left: 120px;
+            width: 15%;
+        }
+        
+        .f9 {
+            top: 1700px;
+            left: 800px;
+            width: 10%;
+        }
+        
+        .f10 {
+            top: 1900px;
+            left: 400px;
+            width: 12%;
+        }
+        
+        .f11 {
+            top: 2800px;
+            left: 800px;
+            width: 20%;
+        }
+        
+        .f12 {
+            top: 2000px;
+            left: 100px;
+            width: 15%;
+        }
+        
+        .f13 {
+            top: 200px;
+            left: 300px;
+            width: 7%;
+        }
+        
+        .f14 {
+            top: 3200px;
+            left: 500px;
+            width: 10%;
+        }
+        
+        .f15 {
+            top: 3500px;
+            left: 200px;
+            width: 10%;
+        }
+        
+        .f20 {
+            width: 100%;
+            position: fixed;
+            bottom: 0;
+            margin-bottom: -0.2%;
+        }
+        /*         
+        #bg {
+            z-index: 50;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url(http://www.pngmart.com/files/3/Bubbles-Transparent-Background.png) repeat 0 0;
+            animation: bg 40s infinite linear;
+        }
+        
+        @keyframes bg {
+            from {
+                background-position: 0% 0%
+            }
+            to {
+                background-position: -100% -80%
+            }
+        } */
+    </style>
+    <title>Hello Ocean World</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="https://jabont.com/jayss/jayss.css">
 </head>
+
 <body>
-
-	<div id="d1" style="height: 400px;width: 100%;background: pink"></div>
-	<div id="d2" style="height: 400px;width: 100%;background: orchid"></div>
-	<div id="d3" style="height: 400px;width: 100%;background: pink"></div>
-	<div id="d4" style="height: 400px;width: 100%;background: orchid"></div>
-	<div id="d5" style="height: 400px;width: 100%;background: pink"></div>
-	<div id="d6" style="height: 400px;width: 100%;background: orchid"></div>
-	<div id="d7" style="height: 400px;width: 100%;background: pink"></div>
-	<div id="d8" style="height: 400px;width: 100%;background: orchid"></div>
-		<div id="tooPla">
-		<img src="fish1.png" class="fish f1" id="f1">
-		<img src="fish1.png" class="fish f2" id="f2">
-		<img src="fish1.png" class="fish f3" id="f3">
-		<img src="fish1.png" class="fish f4" id="f4">
-		<img src="fish1.png" class="fish f5" id="f5">
-	</div>
-	<div id="d9" style="height: 400px;width: 100%;background: pink"></div>
-	<div id="d10" style="height: 400px;width: 100%;background: orchid"></div>
-	<div id="d11" style="height: 400px;width: 100%;background: pink"></div>
-	<div id="d12" style="height: 400px;width: 100%;background: orchid"></div>
-	<div id="d13" style="height: 400px;width: 100%;background: pink"></div>
-	<div id="d14" style="height: 400px;width: 100%;background: orchid"></div>
-	<div id="d15" style="height: 400px;width: 100%;background: pink"></div>
-	<div id="d16" style="height: 400px;width: 100%;background: orchid"></div>
-	<div id="yoyo" class="yoyo"></div>
-
-
-
-	<script type="text/javascript">
-		function rotateNongYoyo(){
-			let r = window.pageYOffset;
-			yoyo.style.transform = `rotate(${r}deg)`;
-		}
-		window.addEventListener("scroll", rotateNongYoyo);
-		function blinkThat(){
-			let ey = d3.offsetTop;
-			let ebottom = ey+d3.offsetHeight; 
-			let nowTop = window.pageYOffset;
-			let nowBottom = nowTop+window.innerHeight;
-			if (nowBottom>ey+300 && nowTop<ebottom-100) {
-				d3.classList.add('blink');
-			}
-			else{
-				d3.classList.remove('blink');
-			}
-		}
-		window.addEventListener("scroll", blinkThat);
-
-		function plaToo(){
-			let y = window.pageYOffset-tooPla.offsetTop+tooPla.offsetHeight;
-			console.log(y);
-			f1.style.marginTop = `-${y}px`;
-			f2.style.marginTop = `-${y*3}px`;
-			f3.style.marginTop = `-${y*2}px`;
-			f4.style.marginTop = `-${y*1.5}px`;
-			f5.style.marginTop = `-${y*0.7}px`;
-		}
-		window.addEventListener("scroll", plaToo);
-	</script>
+    <div id="tooPla">
+        <div id="bg" data-0="background-position:0px 0px;" data-end="background-position:0px 0px;"></div>
+        <img src="1.png" class="fish f1" id="f1">
+        <img src="2.png" class="fish f2" id="f2">
+        <img src="3.png" class="fish f3" id="f3">
+        <img src="4.png" class="fish f4" id="f4">
+        <img src="5.png" class="fish f5" id="f5">
+        <img src="6.png" class="fish f6" id="f6">
+        <img src="7.png" class="fish f7" id="f7">
+        <img src="8.png" class="fish f8" id="f8">
+        <img src="9.png" class="fish f9" id="f9">
+        <img src="10.png" class="fish f10" id="f10">
+        <img src="11.png" class="fish f11" id="f11">
+        <img src="12.png" class="fish f12" id="f12">
+        <img src="13.png" class="fish f13" id="f13">
+        <img src="14.png" class="fish f14" id="f14">
+        <img src="15.png" class="fish f15" id="f15">
+        <img src="20.svg" class="fish f20" id="f20">
+    </div>
+    <script type="text/javascript">
+        function plaToo() {
+            let y = window.pageYOffset - tooPla.offsetTop;
+            console.log(y);
+            f1.style.marginTop = `-${y}px`;
+            // f2.style.marginLeft = `-${x*3}px`;
+            f3.style.marginTop = `-${y*1.2}px`;
+            f4.style.marginTop = `-${y*1.3}px`;
+            f5.style.marginTop = `-${y*0.7}px`;
+            f6.style.marginTop = `-${y*1.4}px`;
+            // f7.style.marginTop = `-${y*3}px`;
+            f8.style.marginTop = `-${y*0.9}px`;
+            f9.style.marginTop = `-${y*1.3}px`;
+            f10.style.marginTop = `-${y*1.3}px`;
+            f11.style.marginTop = `-${y*1.1}px`;
+            f12.style.marginTop = `-${y*1.8}px`;
+            f13.style.marginTop = `-${y*1.3}px`;
+            f14.style.marginTop = `-${y*1.5}px`;
+            f15.style.marginTop = `-${y*1.6}px`;
+        }
+        window.addEventListener("scroll", plaToo);
+    </script>
 </body>
-</html>
+
+</html>r
